@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#3E0000"/>
+  <!-- Gargalo da garrafa -->
+  <path d="M29 13h6v7h-6z" fill="#9F0423" stroke="#ffffff" stroke-width="1.5"/>
+  <rect x="28" y="10" width="8" height="4" rx="1" fill="#ffffff"/>
+  <!-- Corpo da garrafa com curvas clássicas -->
+  <path d="M29 20c-5 3-7 7-7 12v18h20V32c0-5-2-9-7-12z" fill="#9F0423" stroke="#ffffff" stroke-width="2.5"/>
+  <!-- Rótulo nobre -->
+  <rect x="25" y="32" width="14" height="12" rx="2" fill="#ffffff"/>
+  <line x1="28" y1="36" x2="36" y2="36" stroke="#6C0115" stroke-width="1.5"/>
+  <line x1="29" y1="39" x2="35" y2="39" stroke="#9F0423" stroke-width="1"/>
+</svg>
+

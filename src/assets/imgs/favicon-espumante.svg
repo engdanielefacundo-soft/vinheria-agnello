@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#3E0000"/>
+  <!-- Taça Flûte de espumante -->
+  <path d="M26 14h12l-2 22c0 4-4 7-4 7s-4-3-4-7z" fill="#9F0423" stroke="#ffffff" stroke-width="2.5"/>
+  <!-- Haste e base -->
+  <path d="M32 43v8M22 51h20" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Borbulhas / Perlage fina -->
+  <circle cx="32" cy="20" r="1.5" fill="#ffffff"/>
+  <circle cx="29" cy="25" r="1.2" fill="#ffffff"/>
+  <circle cx="34" cy="29" r="1.5" fill="#ffffff"/>
+  <circle cx="31" cy="34" r="1" fill="#ffffff"/>
+</svg>
+
