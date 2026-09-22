@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="16" fill="#3E0000"/>
+  <!-- Bojo da taça clássica -->
+  <path d="M20 18h24c0 10-6 18-12 18s-12-8-12-18z" fill="#9F0423" stroke="#ffffff" stroke-width="2.5"/>
+  <!-- Haste e base -->
+  <path d="M32 36v14M22 50h20" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Brilho no cristal -->
+  <path d="M24 22c1 4 3 7 6 8" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+</svg>
+
