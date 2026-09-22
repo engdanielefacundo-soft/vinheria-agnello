@@ -1,0 +1,1 @@
+/* JS Global Base */
