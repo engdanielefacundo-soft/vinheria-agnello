@@ -40,8 +40,217 @@
   </header>
 
   <main>
+
+    <section class="hero-section" id="hero" aria-label="Apresentação da Vinheria Agnello">
+
+      <div class="hero-video-wrapper">
+        <video class="hero-video-media" autoplay muted loop playsinline poster="src/assets/imgs/hero-poster.jpg" id="hero-video">
+          <source src="src/assets/imgs/agnello.mp4" type="video/mp4">
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title hero-logo-title">
+          <img src="src/assets/imgs/logowhite.png" alt="Vinheria Agnello" class="hero-logo-img">
+        </h1>
+        <h2 class="hero-slogan">Há mais de 15 anos trazendo o mundo dos vinhos para São Paulo. Tradição, qualidade e atendimento feito para você.</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="src/pages/contato.html" class="btn btn-hero">Fale Conosco</a>
+          <a href="#convite-loja" class="btn btn-hero" style="background-color: transparent; border: 2px solid #ffffff;">Conheça Nossa Loja</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="convite-loja" style="background-color: var(--color-light-bg); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="text-align: center; max-width: 900px;">
+        <span class="section-tag">Experiência Presencial</span>
+        <h2>Um Refúgio para Amantes do Vinho no Coração de São Paulo</h2>
+        <p style="font-size: 1.15rem; color: var(--color-text-muted); line-height: 1.8; margin-top: 1rem;">
+          Venha tomar uma taça conosco! Nossa loja física em São Paulo foi pensada para oferecer uma pausa acolhedora na correria paulistana. Aqui você encontra atendimento caloroso, estacionamento com manobrista e uma equipe pronta para bater um bom papo sobre vinhos, sem complicação ou afetação.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="src/pages/contato.html" class="btn">Como Chegar à Nossa Loja</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-vinhos-destaque" id="vinhos-destaque">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Curadoria dos Nossos Sommeliers</span>
+          <h2>Rótulos em Destaque</h2>
+          <p class="section-desc">Seleção especial de vinhos de nossas vinícolas parceiras, provados e aprovados para diferentes momentos e orçamentos.</p>
+        </header>
+
+        <div class="vinhos-grid">
+          <article class="vinho-destaque-card">
+            <div class="vinho-foto-wrapper">
+              <img src="src/assets/imgs/vinho-reserva.jpg" alt="Garrafa de Vinho Tinto Reserva Selecionado">
+            </div>
+            <h3 class="vinho-nome">Reserva Tinto Especial</h3>
+            <span class="vinho-tipo">Cabernet &amp; Syrah (Vale dos Vinhedos)</span>
+          </article>
+
+          <article class="vinho-destaque-card">
+            <div class="vinho-foto-wrapper">
+              <img src="src/assets/imgs/vinho-branco.jpg" alt="Taça de vinho branco fresco">
+            </div>
+            <h3 class="vinho-nome">Chardonnay da Serra</h3>
+            <span class="vinho-tipo">Branco Seco &amp; Aromático</span>
+          </article>
+
+          <article class="vinho-destaque-card">
+            <div class="vinho-foto-wrapper">
+              <img src="src/assets/imgs/vinho-rose.jpg" alt="Taça de vinho rosé suave">
+            </div>
+            <h3 class="vinho-nome">Rosé Provençal</h3>
+            <span class="vinho-tipo">Fresco &amp; Versátil para o Verão</span>
+          </article>
+
+          <article class="vinho-destaque-card">
+            <div class="vinho-foto-wrapper">
+              <img src="src/assets/imgs/espumante.jpg" alt="Taça de espumante nacional premiado">
+            </div>
+            <h3 class="vinho-nome">Espumante Brut Tradicional</h3>
+            <span class="vinho-tipo">Método Champenoise Nacional</span>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="src/pages/nossos-vinhos.html" class="btn btn-outline">Ver Catálogo Completo &amp; Harmonizações</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-diferencial" id="diferencial">
+      <div class="container">
+        <div class="diferencial-wrapper">
+          <div class="diferencial-text">
+            <span class="section-tag">Consultoria Especializada</span>
+            <h2>Mais do que Vender Garrafas, Ajudamos Você a Escolher a Experiência Ideal</h2>
+            <p>
+              Sabemos que o universo dos vinhos pode parecer intimidador para quem está começando e cheio de nuances para os mais experientes. Por isso, na Vinheria Agnello nossos atendentes não são apenas vendedores: são consultores dedicados.
+            </p>
+            <p>
+              Seja para um almoço despretensioso de domingo com a família, um jantar romântico, um presente corporativo ou a composição de uma adega particular, ouvimos suas preferências e orientamos a melhor escolha dentro do seu orçamento, replicando no digital o mesmo calor do nosso balcão.
+            </p>
+
+            <div class="diferencial-features">
+              <div class="diferencial-item">
+                <div class="diferencial-icon"><img src="src/assets/imgs/favicon-taca.svg" alt="" class="icon-favicon" style="margin: 0; width: 24px; height: 24px;"></div>
+                <div>
+                  <h4>Linguagem Simples e Acolhedora</h4>
+                  <p>Explicamos as características do vinho sem termos técnicos complicados ou jargões desnecessários.</p>
+                </div>
+              </div>
+
+              <div class="diferencial-item">
+                <div class="diferencial-icon"><img src="src/assets/imgs/favicon-garrafa.svg" alt="" class="icon-favicon" style="margin: 0; width: 24px; height: 24px;"></div>
+                <div>
+                  <h4>Harmonização Sob Medida</h4>
+                  <p>Conte-nos qual será o prato principal e indicaremos o par perfeito para valorizar sua refeição.</p>
+                </div>
+              </div>
+
+              <div class="diferencial-item">
+                <div class="diferencial-icon"><img src="src/assets/imgs/favicon-espumante.svg" alt="" class="icon-favicon" style="margin: 0; width: 24px; height: 24px;"></div>
+                <div>
+                  <h4>Curadoria Independente</h4>
+                  <p>Não possuímos vinícola própria: somos livres para selecionar apenas o que há de melhor em cada produtor parceiro.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="diferencial-img-box">
+            <img src="src/assets/imgs/loja2.png" alt="Atendimento consultivo e taças de vinho no balcão da Vinheria Agnello">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vinicolas-parceiras" style="background-color: var(--color-white); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Origem Garantida</span>
+          <h2>Grandes Vinícolas Parceiras</h2>
+          <p class="section-desc">Trabalhamos em parceria direta com os mais respeitados produtores do Brasil e do mundo, garantindo procedência e safras autênticas.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+          <div style="padding: 2rem; background-color: var(--color-light-bg); border-radius: var(--border-radius-sm); border-top: 3px solid var(--color-highlight);">
+            <h3 style="font-size: 1.2rem; color: var(--color-dark); margin-bottom: 0.5rem;">Serra Gaúcha &amp; Campanha</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Vinícolas Casa Valduga, Miolo Seleção, Salton e Guaspari.</p>
+          </div>
+          <div style="padding: 2rem; background-color: var(--color-light-bg); border-radius: var(--border-radius-sm); border-top: 3px solid var(--color-highlight);">
+            <h3 style="font-size: 1.2rem; color: var(--color-dark); margin-bottom: 0.5rem;">Argentina &amp; Chile</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Catena Zapata, Montes Alpha, Concha y Toro e boutique terroirs de Mendoza.</p>
+          </div>
+          <div style="padding: 2rem; background-color: var(--color-light-bg); border-radius: var(--border-radius-sm); border-top: 3px solid var(--color-highlight);">
+            <h3 style="font-size: 1.2rem; color: var(--color-dark); margin-bottom: 0.5rem;">Itália &amp; Portugal</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Antinori (Toscana), Prunotto (Piemonte), Quinta do Crasto e Esporão.</p>
+          </div>
+          <div style="padding: 2rem; background-color: var(--color-light-bg); border-radius: var(--border-radius-sm); border-top: 3px solid var(--color-highlight);">
+            <h3 style="font-size: 1.2rem; color: var(--color-dark); margin-bottom: 0.5rem;">França &amp; Espanha</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">Grandes Châteaux de Bordeaux, Borgonha e clássicos de La Rioja.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-espaco" id="o-espaco">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Armazenagem &amp; Estrutura</span>
+          <h2>Conheça Nossos Espaços</h2>
+          <p class="section-desc">Cuidado físico rigoroso para assegurar que cada garrafa chegue perfeita à sua taça.</p>
+        </header>
+
+        <div class="slider-container" aria-roledescription="carrossel">
+          <div class="slider-track">
+
+            <div class="slide-item" role="group" aria-roledescription="slide" aria-label="1 de 3">
+              <img src="src/assets/imgs/espaco-adega.jpg" alt="Adega com controle rigoroso de temperatura e umidade da Vinheria Agnello">
+              <div class="slide-caption">
+                <h3>Armazenagem Controlada: Temperatura &amp; Umidade</h3>
+                <p>Nossa câmara climatizada mantém temperatura estável entre 14°C e 16°C com umidade relativa de 70%, prevenindo a oxidação precoce e o ressecamento das rolhas.</p>
+              </div>
+            </div>
+
+            <div class="slide-item" role="group" aria-roledescription="slide" aria-label="2 de 3">
+              <img src="src/assets/imgs/loja.png" alt="Garrafas de vinho protegidas de luz ultravioleta e vibrações">
+              <div class="slide-caption">
+                <h3>Proteção Rigorosa Contra Luz &amp; Vibrações</h3>
+                <p>Estrutura especial com iluminação fria e amortecedores em gaveteiros para evitar que vibrações e raios UV alterem a evolução sensorial dos rótulos raros.</p>
+              </div>
+            </div>
+
+            <div class="slide-item" role="group" aria-roledescription="slide" aria-label="3 de 3">
+              <img src="src/assets/imgs/balcao.jpg" alt="Balcão acolhedor de degustação e atendimento presencial na loja">
+              <div class="slide-caption">
+                <h3>Balcão Acolhedor de Degustação</h3>
+                <p>Ambiente familiar em São Paulo desenhado para você provar rótulos da semana, tirar dúvidas com nossos sommeliers e escolher seu vinho com tranquilidade.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="slider-btn slider-btn-prev" aria-label="Foto anterior">&#10094;</button>
+          <button class="slider-btn slider-btn-next" aria-label="Próxima foto">&#10095;</button>
+
+          <div class="slider-dots" role="tablist">
+            <button class="slider-dot active" aria-label="Ir para slide 1"></button>
+            <button class="slider-dot" aria-label="Ir para slide 2"></button>
+            <button class="slider-dot" aria-label="Ir para slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-<footer class="site-footer">
+
+  <footer class="site-footer">
     <div class="container footer-grid">
 
       <div class="footer-col footer-brand">
