@@ -1,0 +1,129 @@
+.catalogo-intro {
+  margin-bottom: 3rem;
+}
+
+.vinhos-catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.catalogo-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogo-img-box {
+  height: 220px;
+  overflow: hidden;
+}
+
+.catalogo-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalogo-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogo-tipo-tag {
+  color: var(--color-highlight);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.catalogo-nome {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.catalogo-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.catalogo-specs {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.tabela-container {
+  margin-top: 2rem;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.tabela-vinhos {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.tabela-vinhos thead {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.tabela-vinhos th {
+  padding: 1.1rem 1.2rem;
+  font-family: var(--font-title);
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-highlight);
+}
+
+.tabela-vinhos td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-dark);
+}
+
+.tabela-vinhos tbody tr:nth-child(even) {
+  background-color: var(--color-light-bg);
+}
+
+.tabela-vinhos tbody tr:hover {
+  background-color: #f7e6e8;
+}
+
+.tabela-vinho-destaque {
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.safra-badge {
+  display: inline-block;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
