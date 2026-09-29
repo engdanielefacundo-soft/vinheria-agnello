@@ -2,6 +2,9 @@
 
 > Website institucional desenvolvido com **HTML5 semântico** e **CSS3 puro**, criado com tom de voz empático, consultivo, acolhedor e didático para refletir a tradição de 15 anos da loja física na capital paulista e sua expansão para o e-commerce.
 
+> [!NOTE]
+> **Informativo sobre o Uso de Inteligência Artificial:** Apenas o conteúdo textual deste projeto (narrativas institucionais, história da empresa, notas sobre harmonizações, dicas enológicas e descrições dos rótulos) foi elaborado com o auxílio de Inteligência Artificial (IA). Toda a arquitetura de software, estrutura semântica em HTML5, estilização visual com CSS3 puro, responsividade e lógica de programação em JavaScript foram desenvolvidas integralmente pela desenvolvedora.
+
 ---
 
 ## Demonstração & Acesso Online
@@ -32,7 +35,7 @@ A **Vinheria Agnello** é uma tradicional loja de vinhos finos sediada em São P
 
 ---
 
-## Estrutura das 5 Páginas
+## Estrutura das Páginas
 
 1. **Início (`index.html`)**
    - **Hero com Vídeo em Loop (`agnello.mp4`):** Vídeo de fundo com sobreposição escura de contraste (`rgba(62, 0, 0, 0.72)`), título institucional e slogan oficial: *"Vinheria Agnello: Há mais de 15 anos trazendo o mundo dos vinhos para São Paulo. Tradição, qualidade e atendimento feito para você."*
@@ -65,6 +68,40 @@ A **Vinheria Agnello** é uma tradicional loja de vinhos finos sediada em São P
    - **Formulário Consultivo:** Com a frase quebra-gelo: *"Tem dúvidas sobre qual vinho escolher para o seu jantar? Nossos especialistas estão prontos para ajudar. Mande sua mensagem!"*
    - **Localização Real via Iframe:** Mapa interativo do Google Maps centrado na localização de São Paulo - SP.
    - **Canais Diretos:** Informações de WhatsApp dos consultores, telefone e horários de degustação no balcão.
+
+6. **Painel Administrativo (`src/pages/admin.html`)**
+   - **Área Restrita com Autenticação:** Proteção por senha com modais customizados que seguem a identidade visual da loja.
+   - **Gestão de Inventário & Curadoria:** Tabela dinâmica de controle de rótulos sob armazenagem climatizada.
+   - **Assistente Interativo de Cadastro:** Rotina passo a passo de cadastro de vinhos com validações em tempo real via loops `do...while`.
+
+---
+
+## Guia de Navegação e Acesso ao Admin de Cadastro de Vinhos
+
+Para acessar a área restrita do sommelier e cadastrar novos rótulos de vinhos:
+
+1. **Como Chegar ao Painel Admin:**
+   - **Pela Página Nossos Vinhos:** Acesse o menu **Nossos Vinhos** e clique no botão de destaque **Acesso Administrativo (Sommelier)** localizado no topo da seção.
+   - **Acesso Direto:** É possível acessar diretamente digitando o caminho `src/pages/admin.html` no navegador.
+
+2. **Autenticação de Segurança:**
+   - Ao abrir a página, um diálogo modal personalizado solicitará a senha de administrador.
+   - **Senha de Administrador:** `agnelovinhocp` (ou `agnellocp`).
+   - Se a senha estiver correta, um aviso de confirmação será exibido e o painel será liberado.
+   - Caso clique em **Cancelar** ou digite uma senha incorreta, o acesso será negado e o sistema retornará automaticamente para a página inicial (`index.html`).
+
+3. **Como Cadastrar um Novo Vinho:**
+   - No painel administrativo, localize a seção de cadastro e clique no botão **Cadastrar Novo Vinho**.
+   - O assistente interativo guiará o preenchimento com validações rigorosas em `do...while`:
+     - **Etapa 1 (Nome do Rótulo):** Digite o nome do vinho (campo obrigatório, não permite valor em branco).
+     - **Etapa 2 (Classificação):** Digite o tipo do vinho (restrito estritamente a `Tinto`, `Branco`, `Suave` ou `Seco`).
+     - **Etapa 3 (Safra):** Digite o ano de colheita (número inteiro válido entre 1800 e 2030).
+     - **Etapa 4 (Estoque):** Digite a quantidade disponível (número inteiro maior ou igual a 0).
+   - Se o botão **Cancelar** for clicado em qualquer etapa, o processo é cancelado imediatamente e nenhum dado é registrado.
+   - Concluído com sucesso, o novo vinho é adicionado no topo da tabela de inventário com o selo **Novo** e uma notificação de sucesso é disparada na interface e no console.
+
+4. **Encerramento da Sessão:**
+   - Para sair com segurança da área administrativa, clique no botão **Sair do Painel** no topo da tela. A sessão será finalizada e você será redirecionado para a página inicial.
 
 ---
 
@@ -109,16 +146,21 @@ vinharia-agnello/
     │   ├── sobre.css
     │   ├── nossos-vinhos.css
     │   ├── equipe.css
-    │   └── contato.css
+    │   ├── contato.css
+    │   └── admin.css
     ├── js/
     │   ├── global.js
     │   ├── home.js
-    │   └── contato.js
+    │   ├── contato.js
+    │   ├── admin.js
+    │   ├── cadastro.js
+    │   └── script.js
     └── pages/
         ├── contato.html
         ├── equipe.html
         ├── nossos-vinhos.html
-        └── sobre.html
+        ├── sobre.html
+        └── admin.html
 ```
 
 ---
