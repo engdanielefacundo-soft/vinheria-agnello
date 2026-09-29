@@ -60,7 +60,6 @@
 .sobre-hero-img img,
 .story-figure img {
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-card);
   border: 1px solid var(--color-border);
   width: 100%;
   display: block;
