@@ -139,7 +139,37 @@ function exibirNotificacaoCadastro(mensagem) {
 }
 
 async function iniciarCadastro() {
-    if (sessionStorage.getItem("vinheria_admin_autenticado") !== "agnelovinhocp") {
+    const senhasValidas = ["agnelovinhocp", "agnellocp"];
+    let autenticado = false;
+
+    if (typeof window !== "undefined" && window.adminAutenticado === true) {
+        autenticado = true;
+    }
+
+    const painel = document.getElementById("conteudo-admin");
+    if (painel && (painel.style.display === "block" || (typeof window !== "undefined" && window.getComputedStyle && window.getComputedStyle(painel).display !== "none"))) {
+        autenticado = true;
+    }
+
+    if (!autenticado && typeof estaAutenticado === "function") {
+        autenticado = estaAutenticado();
+    }
+
+    if (!autenticado) {
+        try {
+            const sessao = sessionStorage.getItem("vinheria_admin_autenticado");
+            if (sessao && senhasValidas.includes(sessao)) autenticado = true;
+        } catch (e) {}
+    }
+
+    if (!autenticado) {
+        try {
+            const local = localStorage.getItem("vinheria_admin_autenticado");
+            if (local && senhasValidas.includes(local)) autenticado = true;
+        } catch (e) {}
+    }
+
+    if (!autenticado) {
         await notificarModal("Acesso não autorizado! Redirecionando para a página inicial.", "Acesso Negado");
         if (typeof irParaIndex === "function") {
             irParaIndex();

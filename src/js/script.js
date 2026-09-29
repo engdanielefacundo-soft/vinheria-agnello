@@ -1,4 +1,5 @@
 const SENHA_ADMIN = "agnelovinhocp";
+const SENHAS_ADMIN_VALIDAS = ["agnelovinhocp", "agnellocp"];
 
 function garantirEstilosModal() {
     if (typeof document === "undefined" || !document.head) return;
@@ -129,8 +130,36 @@ function irParaIndex() {
     window.location.href = destino;
 }
 
+function estaAutenticado() {
+    if (typeof window !== "undefined" && window.adminAutenticado === true) {
+        return true;
+    }
+    const painel = document.getElementById("conteudo-admin");
+    if (painel && (painel.style.display === "block" || (typeof window !== "undefined" && window.getComputedStyle && window.getComputedStyle(painel).display !== "none"))) {
+        return true;
+    }
+    try {
+        const sessao = sessionStorage.getItem("vinheria_admin_autenticado");
+        if (sessao && SENHAS_ADMIN_VALIDAS.includes(sessao)) return true;
+    } catch (e) {}
+    try {
+        const local = localStorage.getItem("vinheria_admin_autenticado");
+        if (local && SENHAS_ADMIN_VALIDAS.includes(local)) return true;
+    } catch (e) {}
+    return false;
+}
+if (typeof window !== "undefined") {
+    window.estaAutenticado = estaAutenticado;
+}
+
 async function sairAdmin() {
-    sessionStorage.removeItem("vinheria_admin_autenticado");
+    if (typeof window !== "undefined") {
+        window.adminAutenticado = false;
+    }
+    try { sessionStorage.removeItem("vinheria_admin_autenticado"); } catch (e) {}
+    try { localStorage.removeItem("vinheria_admin_autenticado"); } catch (e) {}
+    const painel = document.getElementById("conteudo-admin");
+    if (painel) painel.style.display = "none";
     await customAlert("Sessão encerrada com sucesso. Retornando para a página inicial.", "Sessão Encerrada");
     irParaIndex();
 }
@@ -155,38 +184,87 @@ function exibirNotificacaoCadastro(mensagem) {
 async function verificarAcessoAdmin() {
     const painel = document.getElementById("conteudo-admin");
 
-    if (sessionStorage.getItem("vinheria_admin_autenticado") === SENHA_ADMIN) {
+    if (estaAutenticado()) {
+        if (typeof window !== "undefined") {
+            window.adminAutenticado = true;
+        }
         if (painel) painel.style.display = "block";
         return;
     }
 
     if (painel) painel.style.display = "none";
+    if (typeof window !== "undefined") {
+        window.adminAutenticado = false;
+    }
 
     let senha = await customPrompt("Área Restrita. Digite a senha de administrador da Vinheria Agnello:", "", "Área Administrativa", true);
 
     if (senha === null) {
-        sessionStorage.removeItem("vinheria_admin_autenticado");
+        if (typeof window !== "undefined") {
+            window.adminAutenticado = false;
+        }
+        try { sessionStorage.removeItem("vinheria_admin_autenticado"); } catch (e) {}
+        try { localStorage.removeItem("vinheria_admin_autenticado"); } catch (e) {}
         if (painel) painel.style.display = "none";
         await customAlert("Acesso cancelado pelo usuário. Retornando para a página inicial.", "Acesso Cancelado");
         irParaIndex();
         return;
     }
 
-    if (senha.trim() !== SENHA_ADMIN) {
-        sessionStorage.removeItem("vinheria_admin_autenticado");
+    const digitada = senha.trim();
+    if (!SENHAS_ADMIN_VALIDAS.includes(digitada)) {
+        if (typeof window !== "undefined") {
+            window.adminAutenticado = false;
+        }
+        try { sessionStorage.removeItem("vinheria_admin_autenticado"); } catch (e) {}
+        try { localStorage.removeItem("vinheria_admin_autenticado"); } catch (e) {}
         if (painel) painel.style.display = "none";
         await customAlert("Senha incorreta! Acesso negado. Retornando para a página inicial.", "Acesso Negado");
         irParaIndex();
         return;
     }
 
-    sessionStorage.setItem("vinheria_admin_autenticado", SENHA_ADMIN);
-    await customAlert("Acesso autorizado! Bem-vindo(a) ao painel administrativo.", "Acesso Autorizado");
+    if (typeof window !== "undefined") {
+        window.adminAutenticado = true;
+    }
+    try { sessionStorage.setItem("vinheria_admin_autenticado", digitada); } catch (e) {}
+    try { localStorage.setItem("vinheria_admin_autenticado", digitada); } catch (e) {}
     if (painel) painel.style.display = "block";
+    await customAlert("Acesso autorizado! Bem-vindo(a) ao painel administrativo.", "Acesso Autorizado");
 }
 
 async function iniciarCadastro() {
-    if (sessionStorage.getItem("vinheria_admin_autenticado") !== SENHA_ADMIN) {
+    const senhasValidas = ["agnelovinhocp", "agnellocp"];
+    let autenticado = false;
+
+    if (typeof window !== "undefined" && window.adminAutenticado === true) {
+        autenticado = true;
+    }
+
+    const painel = document.getElementById("conteudo-admin");
+    if (painel && (painel.style.display === "block" || (typeof window !== "undefined" && window.getComputedStyle && window.getComputedStyle(painel).display !== "none"))) {
+        autenticado = true;
+    }
+
+    if (!autenticado && typeof estaAutenticado === "function") {
+        autenticado = estaAutenticado();
+    }
+
+    if (!autenticado) {
+        try {
+            const sessao = sessionStorage.getItem("vinheria_admin_autenticado");
+            if (sessao && senhasValidas.includes(sessao)) autenticado = true;
+        } catch (e) {}
+    }
+
+    if (!autenticado) {
+        try {
+            const local = localStorage.getItem("vinheria_admin_autenticado");
+            if (local && senhasValidas.includes(local)) autenticado = true;
+        } catch (e) {}
+    }
+
+    if (!autenticado) {
         await customAlert("Acesso não autorizado! Redirecionando para a página inicial.", "Acesso Negado");
         irParaIndex();
         return;
