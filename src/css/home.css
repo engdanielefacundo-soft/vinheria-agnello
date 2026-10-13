@@ -59,36 +59,6 @@
   }
 }
 
-@keyframes pulseBadge {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(159, 4, 35, 0.5);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(159, 4, 35, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(159, 4, 35, 0);
-  }
-}
-
-.badge-tradicao {
-  display: inline-block;
-  background-color: var(--color-highlight);
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 0.45rem 1.2rem;
-  border-radius: var(--border-radius-sm);
-  margin-bottom: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  animation: pulseBadge 2.8s infinite ease-in-out;
-}
 
 .hero-content {
   position: relative;
