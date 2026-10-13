@@ -30,6 +30,11 @@
   padding: 0;
 }
 
+::selection {
+  background-color: var(--color-highlight);
+  color: var(--color-white);
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -123,6 +128,13 @@ img {
   margin-bottom: 0.5rem;
 }
 
+.section-tag::before {
+  content: '— ';
+  color: var(--color-highlight);
+  font-weight: 700;
+  margin-right: 0.25rem;
+}
+
 .section-header h2 {
   position: relative;
   padding-bottom: 1rem;
@@ -200,16 +212,37 @@ img {
   letter-spacing: 1px;
   padding: 0.4rem 0.2rem;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-highlight);
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-link:hover {
   color: #ffcad4;
 }
 
+.nav-link:not(.active):hover::after {
+  width: 100%;
+  left: 0%;
+}
+
 .nav-link.active {
   color: var(--color-white);
   font-weight: 700;
-  border-bottom: 2px solid var(--color-highlight);
+}
+
+.nav-link.active::after {
+  width: 100%;
+  left: 0%;
 }
 
 .nav-toggle-btn {
@@ -221,6 +254,12 @@ img {
   border-radius: var(--border-radius-sm);
   cursor: pointer;
   font-size: 1.25rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-toggle-btn:hover {
+  background-color: rgba(159, 4, 35, 0.2);
+  transform: scale(1.05);
 }
 
 .btn {
@@ -236,18 +275,25 @@ img {
   text-transform: uppercase;
   border: 1px solid var(--color-button);
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
-.btn:hover {
+.btn:not(:disabled):hover {
   background-color: var(--color-button-hover);
   border-color: var(--color-button-hover);
-  opacity: 0.95;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(62, 0, 0, 0.25);
 }
 
-.btn:focus-visible {
-  outline: 3px solid var(--color-highlight);
+.btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px dashed var(--color-highlight);
   outline-offset: 3px;
 }
 
