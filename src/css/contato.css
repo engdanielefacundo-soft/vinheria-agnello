@@ -58,6 +58,75 @@ textarea.form-control,
   min-height: 130px;
 }
 
+.checkbox-group {
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px !important;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white);
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.custom-checkbox:hover {
+  border-color: var(--color-highlight);
+}
+
+.custom-checkbox:checked {
+  background-color: var(--color-highlight);
+  border-color: var(--color-highlight);
+  transform: scale(1.05);
+}
+
+.custom-checkbox::after {
+  content: '';
+  width: 6px;
+  height: 10px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.2s ease;
+  margin-bottom: 2px;
+}
+
+.custom-checkbox:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.custom-checkbox:focus-visible {
+  outline: 2px dashed var(--color-highlight);
+  outline-offset: 2px;
+}
+
+.checkbox-custom-text {
+  color: var(--color-dark);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 .btn-submit {
   width: 100%;
   padding: 1rem;
@@ -70,12 +139,18 @@ textarea.form-control,
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-submit:hover {
   background-color: var(--color-button-hover);
   border-color: var(--color-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(62, 0, 0, 0.25);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
 }
 
 .mapa-card {
@@ -118,6 +193,12 @@ textarea.form-control,
   padding: 1.5rem;
   border-radius: var(--border-radius-sm);
   border-left: 4px solid var(--color-highlight);
+  transition: transform 0.3s ease, border-left-color 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateX(4px);
+  border-left-color: var(--color-button);
 }
 
 .info-box h4 {
