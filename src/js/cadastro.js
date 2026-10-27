@@ -13,9 +13,10 @@ function garantirEstilosModal() {
 .modal-input { width: 100%; box-sizing: border-box; padding: 0.85rem 1.1rem; border: 1.5px solid #eadae0; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #3E0000; background-color: #fcfbfb; margin-bottom: 1.6rem; transition: all 0.3s ease; }
 .modal-input:focus { outline: none; border-color: #9F0423; background-color: #ffffff; box-shadow: 0 0 0 3px rgba(159, 4, 35, 0.15); }
 .modal-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.btn-modal-confirm { background-color: #9F0423; color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.75rem; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; }
+.btn-modal-confirm { background-color: #9F0423; color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.75rem; border: none; outline: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; }
 .btn-modal-confirm:hover { background-color: #85031b; transform: translateY(-1px); }
-.btn-modal-cancel { background-color: #fcfbfb; color: #3E0000; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border: 1px solid #eadae0; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; }
+.btn-modal-confirm:focus, .btn-modal-confirm:focus-visible, .btn-modal-cancel:focus, .btn-modal-cancel:focus-visible { outline: none; }
+.btn-modal-cancel { background-color: #fcfbfb; color: #3E0000; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border: 1px solid #eadae0; outline: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; }
 .btn-modal-cancel:hover { background-color: #ebdce0; transform: translateY(-1px); }
 `;
     document.head.appendChild(style);
