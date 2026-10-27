@@ -116,9 +116,9 @@ textarea.form-control,
   transform: rotate(45deg) scale(1);
 }
 
+.custom-checkbox:focus,
 .custom-checkbox:focus-visible {
-  outline: 2px dashed var(--color-highlight);
-  outline-offset: 2px;
+  outline: none;
 }
 
 .checkbox-custom-text {

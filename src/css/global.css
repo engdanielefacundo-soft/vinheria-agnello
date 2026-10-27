@@ -290,11 +290,13 @@ img {
   transform: translateY(0);
 }
 
+.btn:focus,
 .btn:focus-visible,
+a:focus,
 a:focus-visible,
+button:focus,
 button:focus-visible {
-  outline: 2px dashed var(--color-highlight);
-  outline-offset: 3px;
+  outline: none;
 }
 
 .btn-outline {
